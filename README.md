@@ -5,6 +5,8 @@
 
 ---
 Para o projeto final da **Unidade III** planejamos fazer uma analise comparativa de 2 algoritmos de agrupamento **K-Means** e **DBSCAN** para diferenciar caracteristcas de digitação em um dataset de ***Keyboard Analytics***. O objetivo deste trabalho é avaliar qual dos algoritmos apresenta maior consistência em agrupar dados de um mesmo indivíduo no mesmo grupo, analisando a viabilidade dessa heurística para a diferenciação de pessoas com base em suas métricas de digitação disponiveis em bancos de dados open access.
+
+Para o projeto final da **Unidade III**, planejamos fazer uma análise comparativa de dois algoritmos de agrupamento, **K-Means** e **DBSCAN**, para diferenciar características de digitação em um dataset de ***Keyboard Analytics***. O objetivo deste trabalho é avaliar qual dos algoritmos apresenta maior referência e consistência em agrupar dados de um mesmo indivíduo no mesmo grupo, analisando a viabilidade dessa heurística para a diferenciação de pessoas com base em suas métricas de digitação. Para isso, serão utilizados dados disponíveis em uma base de dados open access, com a possibilidade de expandir os testes com a coleta de dados dos integrantes do grupo.
 ### Metodologia
 ### K-Means
 ### DBSCAN
