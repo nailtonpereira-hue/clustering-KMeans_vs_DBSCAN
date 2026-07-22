@@ -7,8 +7,8 @@
 ---
 Este projeto apresenta uma análise comparativa de dois algoritmos de agrupamento, **K-Means** e **DBSCAN**, aplicados a um dataset de **Keyboard Analytics**. O objetivo é investigar a utilização de padrões de digitação como uma forma de diferenciação de usuários, analisando a capacidade dos algoritmos em identificar grupos com características semelhantes.
 
-## Objetivo
-O objetivo deste trabalho é comparar a capacidade de cada **algoritmo** em agrupar corretamente padrões de digitação pertencentes a diferentes indivíduos no mesmo **cluster**, investigando a viabilidade do uso de técnicas de agrupamento para a diferenciação de usuários com base em características de **Keyboard Analytics**. Para isso, serão utilizados dados disponíveis em uma base de dados **open access** e, se necessário, novos dados de digitação serão coletados.
+## Objetivos
+Comparar a capacidade de cada **algoritmo** em agrupar corretamente padrões de digitação pertencentes a diferentes indivíduos no mesmo **cluster**, investigando a viabilidade do uso de técnicas de agrupamento para a diferenciação de usuários com base em características de **Keyboard Analytics**.
 
 ## Dataset
 Explicar:
