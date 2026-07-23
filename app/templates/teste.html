@@ -1,0 +1,12 @@
+<select>
+
+{% for cenario in cenarios %}
+
+<option value="{{ cenario.id }}">
+	Tamanho: {{ cenario.tamanho }} |
+	Tipo: {{ cenario.tipo }}
+</option>
+
+{% endfor %}
+
+</select>

@@ -1,0 +1,20 @@
+##############################
+###SISTEMA DE ARQUIVO LOCAL###
+##############################
+
+O identificador e o nome do arquivo .csv
+	->ex: joao.csv
+
+A pasta cenario indica como o arquivos estao tabelados
+	->ex: S01,PIN,4,1234
+-S01: id do cenario
+-PIN: tipo desenha
+-4: tamanho
+-1234: a senha que sera usada
+
+
+O arquivos .csv terao id,tecla,hold,flight
+	-ex: joao.csv
+		S01,c,120,40
+
+usar Plotly.js para graficos
