@@ -13,13 +13,14 @@ Comparar a capacidade de cada **algoritmo** em agrupar corretamente padrões de 
 ## Dataset
 Na aria de segurança e biometria comportamental a análise de digitação busca identificar o padrão unico de um indivíduo digitar, sua "impressão digital comportamental". Explicar quais dados vao pra tabela.
 
-(link pwra assesar site )
+(link para assesar site )
+
 Aqui eles disponibilizam de forma gratuita um dataset gigante com mais de 400 partesipantes e alguns resultados que usaremos como comparativos na seção de Análise de Resultados.
 
 Colocar imagem de como a tabela é organizada
 
-
-Esperamos coletar alguns dados dos membros do grupo para teste comparativos, utilizando uma métricas diferentes de coleta de dados encontrada neste artigo (), as instruções de como executar a coleta estará na seção Como executar o Projeto.
+()
+As instruções de como executar a coleta estará na seção Como executar o Projeto. Esperamos coletar alguns dados dos membros do grupo para teste comparativos, utilizando uma métricas diferentes de coleta de dados encontrada no artigo acima.
 
 Imagem ilustrativa das tabelas cenafios e tabela
 
@@ -30,6 +31,7 @@ Explicar:
 - possibilidade de inclusão de novos dados coletados.
 
 ## Metodologia
+O k-mens e dbscan são Algoritmos de agrupamento bem distintos para contextos diferentes, esperamos analisar qual deles se encaixa nesse contexto.
 
 ### Coleta de Dados
 Explicar:
