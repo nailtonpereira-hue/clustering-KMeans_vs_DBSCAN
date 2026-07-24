@@ -11,8 +11,10 @@ Este projeto apresenta uma análise comparativa de dois algoritmos de agrupament
 Comparar a capacidade de cada **algoritmo** em agrupar corretamente padrões de digitação pertencentes a diferentes indivíduos no mesmo **cluster**, investigando a viabilidade do uso de técnicas de agrupamento para a diferenciação de usuários com base em características de **Keyboard Analytics**.
 
 ## Dataset
-Na aria de segurança e biometria comportamental a análise de digitação busca identificar o padrão unico de um indivíduo digitar, sua "impressão digital comportamental".
-Utilizaremos um site famoso nessa aria de pesquisa (), aqui eles disponibilizam de forma gratuita um dataset gigante com mais de 400 partesipantes e alguns resultados que usaremos como comparativos na seção de Análise de Resultados.
+Na aria de segurança e biometria comportamental a análise de digitação busca identificar o padrão unico de um indivíduo digitar, sua "impressão digital comportamental". Explicar quais dados vao pra tabela.
+
+(link pwra assesar site )
+Aqui eles disponibilizam de forma gratuita um dataset gigante com mais de 400 partesipantes e alguns resultados que usaremos como comparativos na seção de Análise de Resultados.
 
 Colocar imagem de como a tabela é organizada
 
