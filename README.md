@@ -76,11 +76,112 @@ Exemplo:
 
 ## Como Executar o Projeto
 
-Passo a passo:
+## 1. Clonar o repositório
 
-1. Instalar dependências:
+```bash
+git clone <URL_DO_REPOSITORIO>
+cd <NOME_DO_PROJETO>
+```
+
+---
+
+## 2. Criar um ambiente virtual
+
+É recomendado utilizar um ambiente virtual (`venv`) para isolar as dependências do projeto.
+
+### Windows
+
+```bash
+python -m venv .venv
+```
+
+ou
+
+```bash
+py -m venv .venv
+```
+
+### Linux/macOS
+
+```bash
+python3 -m venv .venv
+```
+
+---
+
+## 3. Ativar o ambiente virtual
+
+### Windows (PowerShell)
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### Windows (CMD)
+
+```cmd
+.\.venv\Scripts\activate.bat
+```
+
+### Linux/macOS
+
+```bash
+source .venv/bin/activate
+```
+
+Após a ativação, o terminal deverá exibir algo semelhante a:
+
+```text
+(.venv) C:\Users\usuario\projeto>
+```
+
+---
+
+## 4. Instalar as dependências
+
+Com o ambiente virtual ativado, execute:
+
 ```bash
 pip install -r requirements.txt
+```
 
+---
 
+## 5. Executar o projeto
+
+Exemplo:
+
+```bash
+python app.py
+```
+
+ou
+
+```bash
+python app/app.py
+```
+
+(depende da estrutura do projeto)
+
+---
+
+## 6. Desativar o ambiente virtual
+
+Quando terminar de utilizar o projeto:
+
+```bash
+deactivate
+```
+
+---
+
+## Observações
+
+- O ambiente virtual (`.venv`) **não deve ser enviado para o GitHub**. Adicione a pasta `.venv` ao arquivo `.gitignore`.
+- Cada desenvolvedor deve criar seu próprio ambiente virtual ao clonar o projeto.
+- Caso novas bibliotecas sejam instaladas, atualize o arquivo `requirements.txt` com:
+
+```bash
+pip freeze > requirements.txt
+```
 
