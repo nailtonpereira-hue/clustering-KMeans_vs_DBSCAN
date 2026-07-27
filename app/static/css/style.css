@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:900px;
+    max-width:95%;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    font-size:34px;
+    color:#1f2937;
+    margin-bottom:8px;
+}
+
+h2{
+    text-align:center;
+    font-size:17px;
+    color:#6b7280;
+    font-weight:400;
+    margin-bottom:35px;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.menu button{
+    width:170px;
+    height:45px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#d9d9d9;
+    font-size:16px;
+    transition:.3s;
+}
+
+.menu button.ativo{
+    background:#1976d2;
+    color:white;
+}
+
+.conteudo{ display:none; }
+.conteudo.ativo{ display:block; }
+
+.formulario{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.campo{
+    display:flex;
+    flex-direction:column;
+}
+
+.campo label{
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#555;
+}
+
+.campo input,
+.campo select{
+    width:100%;
+    height:45px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:10px;
+    font-size:15px;
+}
+
+.botoes{
+    grid-column:1/-1;
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.botoes button{
+    width:240px;
+    height:48px;
+    border:none;
+    border-radius:8px;
+    background:#28a745;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.graficos{
+    display:grid;
+    gap:25px;
+}
+
+.grafico{
+    height:250px;
+    border:2px dashed #bbb;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#777;
+    font-size:20px;
+    background:#fafafa;
+}
+
+/* ===== MODAL ===== */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal-content{
+    width:700px;
+    max-width:90%;
+    background:white;
+    border-radius:18px;
+    padding:40px;
+    text-align:center;
+}
+
+.tituloSenha{
+    color:#555;
+    margin:15px 0 25px;
+}
+
+.senha-exibida{
+    font-size:46px;
+    font-weight:bold;
+    letter-spacing:4px;
+    color:#1976d2;
+    margin-bottom:30px;
+}
+
+#entradaSenha{
+    width:100%;
+    height:72px;
+    font-size:28px;
+    text-align:center;
+    border:3px solid #bdbdbd;
+    border-radius:12px;
+    outline:none;
+    transition:.15s;
+}
+
+#entradaSenha.digitando{
+    border-color:#28a745;
+}
+
+#entradaSenha.erro{
+    border-color:#dc3545;
+    color:#dc3545;
+    font-weight:bold;
+}
+
+#entradaSenha.sucesso{
+    border-color:#28a745;
+    color:#28a745;
+    font-weight:bold;
+}
+
+.acoes-modal{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.btnSalvar,
+.btnCancelar{
+    width:180px;
+    height:46px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.btnSalvar{ background:#28a745; }
+.btnCancelar{ background:#dc3545; }
+
+@media (max-width:700px){
+    .formulario{
+        grid-template-columns:1fr;
+    }
+
+    .senha-exibida{
+        font-size:34px;
+    }
+
+    #entradaSenha{
+        font-size:22px;
+    }
+}

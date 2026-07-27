@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Keyboard Analytics</h1>
+    <h2>Coleta de dados e análise comparativa dos algoritmos K-Means e DBSCAN</h2>
+
+    <div class="menu">
+        <button id="btnColeta" class="ativo" onclick="mostrar('coleta')">
+            Coleta
+        </button>
+
+        <button id="btnGraficos" onclick="mostrar('graficos')">
+            Gráficos
+        </button>
+    </div>
+
+    <!-- ABA COLETA -->
+    <div id="coleta" class="conteudo ativo">
+
+        <div class="formulario">
+
+            <div class="campo">
+                <label for="nome">Nome</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    list="listaNomes"
+                    placeholder="Digite ou selecione um nome">
+
+                <datalist id="listaNomes"></datalist>
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha</label>
+
+                <select id="senha">
+                    <option value="">Selecione uma senha</option>
+                </select>
+            </div>
+
+            <div class="botoes">
+                <button id="btnIniciar">Iniciar Coleta</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ABA GRÁFICOS -->
+    <div id="graficos" class="conteudo">
+
+        <div class="graficos">
+            <div class="grafico">Gráfico 1</div>
+            <div class="grafico">Gráfico 2</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE COLETA -->
+<div id="modalColeta" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Coleta de Dados</h2>
+        <p class="tituloSenha">Digite exatamente a senha abaixo</p>
+
+        <div id="senhaExibida" class="senha-exibida">
+            ----
+        </div>
+
+        <input
+            type="text"
+            id="entradaSenha"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Digite a senha">
+
+        <div class="acoes-modal">
+            <button class="btnSalvar">Salvar Coleta</button>
+            <button class="btnCancelar" id="btnCancelar">Cancelar</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

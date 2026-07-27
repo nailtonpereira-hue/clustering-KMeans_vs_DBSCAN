@@ -9,4 +9,4 @@ def teste():
 	cenarios = read_csv(CENARIOS_FILE)
 
 	print(cenarios)
-	return render_template("teste.html", cenarios=cenarios)
+	return render_template("index.html", cenarios=cenarios)

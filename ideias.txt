@@ -18,3 +18,5 @@ O arquivos .csv terao id,tecla,hold,flight
 		S01,c,120,40
 
 usar Plotly.js para graficos
+
+.tie5Roanl
