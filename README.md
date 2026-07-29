@@ -118,7 +118,20 @@ cd <NOME_DO_PROJETO>
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
-
+caso apareça o erro:
+```bash
+.\.venv\Scripts\Activate.ps1 : ...
+No linha:1 caractere:1
++ .\.venv\Scripts\Activate.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ErrodeSegurança: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+utilise
+```bash
+Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+```
 ### Linux/macOS
 
 ```bash
@@ -135,16 +148,8 @@ pip install -r requirements.txt
 ## 4. Executar o projeto
 
 ```bash
-python app.py
+python -m app.app
 ```
-
-ou
-
-```bash
-python app/app.py
-```
-
-(dependendo da estrutura do projeto)
 
 ## Observações
 

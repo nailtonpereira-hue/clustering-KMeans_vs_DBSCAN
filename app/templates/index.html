@@ -3,101 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Keyboard Analytics</title>
+
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<div class="container">
+<main>
 
-    <h1>Keyboard Analytics</h1>
-    <h2>Coleta de dados e análise comparativa dos algoritmos K-Means e DBSCAN</h2>
+    <div class="container">
 
-    <div class="menu">
-        <button id="btnColeta" class="ativo" onclick="mostrar('coleta')">
-            Coleta
-        </button>
+        <div class="grafico-container">
 
-        <button id="btnGraficos" onclick="mostrar('graficos')">
-            Gráficos
-        </button>
-    </div>
+            <label for="kmeans-clusters">K-Means</label>
 
-    <!-- ABA COLETA -->
-    <div id="coleta" class="conteudo ativo">
+            <input
+                type="text"
+                id="kmeans-clusters"
+                placeholder="Clusters: 1/2/5/67/32">
 
-        <div class="formulario">
+            <div id="kmeans-chart" class="grafico"></div>
 
-            <div class="campo">
-                <label for="nome">Nome</label>
+        </div>
 
-                <input
-                    type="text"
-                    id="nome"
-                    list="listaNomes"
-                    placeholder="Digite ou selecione um nome">
+        <div class="grafico-container">
 
-                <datalist id="listaNomes"></datalist>
-            </div>
+            <label for="dbscan-clusters">DBSCAN</label>
 
-            <div class="campo">
-                <label for="senha">Senha</label>
+            <input
+                type="text"
+                id="dbscan-clusters"
+                placeholder="Clusters: 1/2/5/67/32">
 
-                <select id="senha">
-                    <option value="">Selecione uma senha</option>
-                </select>
-            </div>
-
-            <div class="botoes">
-                <button id="btnIniciar">Iniciar Coleta</button>
-            </div>
+            <div id="dbscan-chart" class="grafico"></div>
 
         </div>
 
     </div>
 
-    <!-- ABA GRÁFICOS -->
-    <div id="graficos" class="conteudo">
+<div class="tables-container">
 
-        <div class="graficos">
-            <div class="grafico">Gráfico 1</div>
-            <div class="grafico">Gráfico 2</div>
-        </div>
+    <div class="table-container">
+        <table id="kmeans-table">
+            <thead>
+                <tr>
+                    <th>Cluster</th>
+                    <th>Dono</th>
+                    <th>Acertos</th>
+                    <th>Erros</th>
+                    <th>Total</th>
+                    <th>Pureza (%)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- Preenchido pelo JavaScript -->
+            </tbody>
+
+        </table>
 
     </div>
 
-</div>
 
-<!-- MODAL DE COLETA -->
-<div id="modalColeta" class="modal">
+    <div class="table-container">
+        <table id="dbscan-table">
 
-    <div class="modal-content">
+            <thead>
+                <tr>
+                    <th>Cluster</th>
+                    <th>Dono</th>
+                    <th>Acertos</th>
+                    <th>Erros</th>
+                    <th>Total</th>
+                    <th>Pureza (%)</th>
+                </tr>
+            </thead>
 
-        <h2>Coleta de Dados</h2>
-        <p class="tituloSenha">Digite exatamente a senha abaixo</p>
+            <tbody>
+                <!-- Preenchido pelo JavaScript -->
+            </tbody>
 
-        <div id="senhaExibida" class="senha-exibida">
-            ----
-        </div>
-
-        <input
-            type="text"
-            id="entradaSenha"
-            autocomplete="off"
-            spellcheck="false"
-            placeholder="Digite a senha">
-
-        <div class="acoes-modal">
-            <button class="btnSalvar">Salvar Coleta</button>
-            <button class="btnCancelar" id="btnCancelar">Cancelar</button>
-        </div>
+        </table>
 
     </div>
 
 </div>
+</main>
 
+<script src="{{ url_for('static', filename='js/tabela.js') }}"></script>
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
 </body>
 </html>
