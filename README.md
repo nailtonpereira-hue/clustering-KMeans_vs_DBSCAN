@@ -26,7 +26,7 @@ O objetivo é investigar a capacidade desses algoritmos em identificar padrões 
 
 Na área de segurança e biometria comportamental, a análise da dinâmica de digitação busca identificar padrões únicos de cada indivíduo, funcionando como uma espécie de **impressão digital comportamental**.
 
-O projeto utiliza uma base de dados pública (*Open Access*) contendo registros de mais de **400 participantes**, disponibilizada para pesquisas acadêmicas.
+O projeto utiliza uma base de dados pública da CMU School of Computer Science, contendo registros de mais de **400 participantes**, disponibilizada para pesquisas acadêmicas. Os dados foram obtidos do **CMU Keystroke Benchmark Dataset**, disponível em: <https://www.cs.cmu.edu/~keystroke/>.
 
 **Nesta seção serão apresentados:**
 
