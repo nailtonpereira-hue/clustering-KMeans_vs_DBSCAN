@@ -26,43 +26,41 @@ O objetivo é investigar a capacidade desses algoritmos em identificar padrões 
 
 Na área de segurança e biometria comportamental, a análise da dinâmica de digitação busca identificar padrões únicos de cada indivíduo, funcionando como uma espécie de **impressão digital comportamental**.
 
-O projeto utiliza uma base de dados pública da CMU School of Computer Science, contendo registros de mais de **400 participantes**, disponibilizada para pesquisas acadêmicas. Os dados foram obtidos do **CMU Keystroke Benchmark Dataset**, disponível em: <https://www.cs.cmu.edu/~keystroke/>.
+O projeto utiliza uma base de dados pública da CMU School of Computer Science disponibilizada para pesquisas acadêmicas. Os dados foram obtidos do **CMU Keystroke Benchmark Dataset**, disponível em: <https://www.cs.cmu.edu/~keystroke/>.
 
-**Nesta seção serão apresentados:**
+O conjunto de dados contém **35 colunas** colunas representando cada tecla da senha **.tie5Roanl**, sendo:
 
-- origem da base de dados;
-- características utilizadas na análise;
-- descrição das colunas da tabela;
-- imagem ilustrativa da organização do dataset;
-- link para o repositório original da base de dados.
+| Coluna | Descrição |
+|--------|-----------|
+| `subject` | Identificador do participante. |
+| `sessionIndex` | Índice da sessão de coleta. |
+| `rep` | Número da repetição da senha digitada. |
+| `H.<tecla>` | Tempo em que a tecla permaneceu pressionada (*Hold Time*). |
+| `DD.<tecla1>.<tecla2>` | Intervalo entre pressionar a primeira e a segunda tecla (*Down-Down*). |
+| `UD.<tecla1>.<tecla2>` | Intervalo entre soltar a primeira tecla e pressionar a segunda (*Up-Down*). |
 
-Além da base pública, o projeto permitirá a inclusão de novos dados coletados pelos integrantes do grupo, utilizando uma metodologia de coleta adaptada para este trabalho.
+### Exemplo de registro
 
+| subject | sessionIndex | rep | H.period | DD.period.t | UD.period.t | H.t | ... | H.Return |
+|---------|-------------:|----:|---------:|------------:|------------:|----:|-----|---------:|
+| s002 | 1 | 1 | 0.1491 | 0.3979 | 0.2488 | 0.1069 | ... | 0.0742 |
 ---
 
 # Metodologia
 
 Os algoritmos **K-Means** e **DBSCAN** possuem características bastante distintas e são indicados para diferentes cenários de agrupamento. Este trabalho busca avaliar qual deles apresenta melhor desempenho na identificação de padrões de digitação.
 
-## Coleta de Dados
-
-Descrever:
-
-- funcionamento da coleta;
-- métricas capturadas (tempo de pressionamento, tempo entre teclas, etc.);
-- formato dos arquivos gerados;
-- como executar o sistema de coleta.
-
----
-
 ## Pré-processamento
 
-Descrever:
+Antes do treinamento dos modelos, foi realizado o pré-processamento do conjunto de dados com o objetivo de garantir a qualidade e a consistência das informações utilizadas.
 
-- limpeza dos dados;
-- tratamento de valores ausentes;
-- normalização ou padronização;
-- preparação dos dados para os algoritmos.
+As etapas realizadas foram:
+
+- **Remoção de valores ausentes:** foram descartadas todas as linhas que continham pelo menos um valor ausente (`NaN`).
+- **Remoção de colunas de identificação:** as colunas `subject`, `sessionIndex` e `rep` foram removidas por serem apenas identificadores dos participantes e das sessões, não contribuindo para o aprendizado dos modelos.
+- **Tratamento de valores negativos:** registros com valores negativos em atributos que representam tempos de pressionamento (`H`) ou intervalos entre pressionamentos (`DD`) podem indicar inconsistências na coleta e devem ser removidos. Já valores negativos em atributos `UD` (Up-Down) foram mantidos, pois podem representar a sobreposição natural entre teclas durante a digitação.
+- **Remoção de registros duplicados:** caso existam amostras duplicadas, elas são removidas para evitar redundância no conjunto de dados.
+- **Padronização dos atributos:** os atributos numéricos são padronizados utilizando o **StandardScaler**, tornando-os comparáveis e adequados para algoritmos sensíveis à escala dos dados.
 
 ---
 
