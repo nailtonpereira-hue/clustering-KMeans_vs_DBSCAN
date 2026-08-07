@@ -1,8 +1,12 @@
 console.log("tabela.js carregado");
 
-function calcularPureza(dados) {
 
-    dados = converterDados(dados);
+function calcularPureza(dados, tipoCluster) {
+
+    dados = converterDados(
+        dados,
+        tipoCluster
+    );
 
     const clusters = {};
 
@@ -79,9 +83,14 @@ function calcularPureza(dados) {
 
 }
 
-function preencherTabela(dadosTabela) {
 
-    const tabela = document.getElementById("kmeans-table");
+
+function preencherTabela(dadosTabela, tabelaId) {
+
+    const tabela = document.getElementById(
+        tabelaId
+    );
+
 
     tabela.innerHTML = "";
 
@@ -99,7 +108,9 @@ function preencherTabela(dadosTabela) {
         <tbody></tbody>
     `;
 
+
     const tbody = tabela.querySelector("tbody");
+
 
     dadosTabela.forEach(linha => {
 
@@ -118,16 +129,30 @@ function preencherTabela(dadosTabela) {
 
 }
 
-function converterDados(dados){
+
+
+function converterDados(dados, tipoCluster){
 
     return dados.map(linha => {
 
         return {
+
             ...linha,
-            media_H: Number(linha.media_H),
-            media_DD: Number(linha.media_DD),
-            media_UD: Number(linha.media_UD),
-            cluster: Number(linha.cluster)
+
+            subject: linha.subject,
+
+            PCA1: Number(linha.PCA1),
+            PCA2: Number(linha.PCA2),
+            PCA3: Number(linha.PCA3),
+
+            cluster:
+
+                tipoCluster === "dbscan"
+                ?
+                Number(linha.cluster_dbscan)
+                :
+                Number(linha.cluster_kmeans)
+
         };
 
     });

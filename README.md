@@ -127,7 +127,7 @@ No linha:1 caractere:1
 ```
 utilise
 ```bash
-Scope Process -ExecutionPolicy Bypass
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
 ```
 ### Linux/macOS
